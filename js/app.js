@@ -20,7 +20,7 @@ const showProducts = (products) => {
     
  
       <div class="card single-product">
-        <img src="${image}" class="card-img-top p-3 mx-auto" style="width:250px; height:250px" alt="..." />
+        <img src="${image}" class="card-img-top p-3 mx-auto " style="width:250px; height:250px" alt="..." />
         <div class="card-body text-start">
           <h4 class="card-title">${product.title}</h4>
           <p class="card-text">Category: ${product.category}</p>
