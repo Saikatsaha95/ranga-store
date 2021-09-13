@@ -10,7 +10,6 @@ loadProducts();
 
 // show all product in UI
 const showProducts = (products) => {
-  console.log(products);
   const allProducts = products.map((pd) => pd);
   console.log("Allproducts: ", allProducts);
   for (const product of allProducts) {
@@ -24,6 +23,10 @@ const showProducts = (products) => {
       <h3>${product.title}</h3>
       <p>Category: ${product.category}</p>
       <h2>Price: $ ${product.price}</h2>
+      <div class = "">
+        <p>Total rating: ${product?.rating?.count}</p>
+        <p>Average rating: ${product?.rating?.rate} </p>
+      </div>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
       <button id="details-btn" class="btn btn-danger">Details</button></div>
       `;
@@ -56,7 +59,7 @@ const updatePrice = (id, value) => {
 
 // set innerText function
 const setInnerText = (id, value) => {
-  document.getElementById(id).innerText = Math.round(value);
+  document.getElementById(id).innerText = value.toFixed(2);
 };
 
 // update delivery charge and total Tax
