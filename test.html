@@ -1,0 +1,70 @@
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card h-100">
+      <img src="..." class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">
+          This is a wider card with supporting text below as a natural lead-in
+          to additional content. This content is a little bit longer.
+        </p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="single-product card" style= "height: 600px">
+    <div>
+  <img class="product-image card-img-top " style= "width: 200px; height: 200px" src=${image}></img>
+    </div>
+    <h3>${product.title}</h3>
+    <p>Category: ${product.category}</p>
+    <h2>Price: $ ${product.price}</h2>
+    <div class = "">
+      <p>Total rating: ${product?.rating?.count}</p>
+      <p>Average rating: ${product?.rating?.rate} </p>
+    </div>
+    <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
+    <button id="details-btn" class="btn btn-danger">Details</button></div>
+
+
+
+
+
+
+    <div class="input-group mx-auto">
+        <input
+          type="text"
+          class="
+            form-control form-control-lg
+            p-2
+            py-2
+            rounded-2
+            border-warning
+          "
+          placeholder="Search for your favourite item"
+          aria-label="Recipient's username"
+          aria-describedby="button-addon2"
+        />
+        <button
+          class="
+            btn btn-outline-secondary
+            px-3
+            p-2
+            rounded-2
+            btn-outline-warning
+          "
+          type="button"
+          id="button-addon2"
+          onclick="loadProducts()"
+        >
+          Search
+        </button>
+      </div>
