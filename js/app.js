@@ -1,5 +1,7 @@
+let count = 0;
+
 const loadProducts = () => {
-  const url = `https://fakestoreapi.com/products`;
+  const url = `https://raw.githubusercontent.com/ProgrammingHero1/ranga-store-api/main/ranga-api.json?fbclid=IwAR0frgKPlWlnYv4TDNRhBse9Oep6W-3T_T1_E8fFeZJG_QEmtvji_EYVoao`;
   fetch(url)
     .then((response) => response.json())
     .then((data) => showProducts(data));
@@ -28,18 +30,19 @@ const showProducts = (products) => {
     document.getElementById("all-products").appendChild(div);
   }
 };
-let count = 0;
+
 const addToCart = (id, price) => {
   count = count + 1;
   updatePrice("price", price);
 
   updateTaxAndCharge();
   document.getElementById("total-Products").innerText = count;
+  updateTotal();
 };
 
 const getInputValue = (id) => {
   const element = document.getElementById(id).innerText;
-  const converted = parseInt(element);
+  const converted = parseFloat(element);
   return converted;
 };
 
@@ -48,7 +51,7 @@ const updatePrice = (id, value) => {
   const convertedOldPrice = getInputValue(id);
   const convertPrice = parseFloat(value);
   const total = convertedOldPrice + convertPrice;
-  document.getElementById(id).innerText = Math.round(total);
+  document.getElementById(id).innerText = total.toFixed(2);
 };
 
 // set innerText function
@@ -79,5 +82,5 @@ const updateTotal = () => {
     getInputValue("price") +
     getInputValue("delivery-charge") +
     getInputValue("total-tax");
-  document.getElementById("total").innerText = grandTotal;
+  document.getElementById("total").innerText = grandTotal.toFixed(2);
 };
