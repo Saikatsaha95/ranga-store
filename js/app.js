@@ -8,6 +8,14 @@ const loadProducts = () => {
 };
 loadProducts();
 
+const showStars = (stars) => {
+  let starCount = "";
+  for (let i = 0; i < stars; i++) {
+    starCount = starCount + `<i class="fas fa-star star-gold"></i>`;
+  }
+  return starCount;
+};
+
 // show all product in UI
 const showProducts = (products) => {
   const allProducts = products.map((pd) => pd);
@@ -21,18 +29,33 @@ const showProducts = (products) => {
  
       <div class="card single-product">
         <img src="${image}" class="card-img-top p-3 mx-auto " style="width:250px; height:250px" alt="..." />
-        <div class="card-body text-start">
-          <h4 class="card-title">${product.title}</h4>
-          <p class="card-text">Category: ${product.category}</p>
-          <h5 class="card-text">Price: $ ${product.price}</h5>
-          <div class="card-text mt-3">
-            <p class = "mb-1">Total ratings: ${product?.rating?.count}</p>
-            <p>Average rating: ${product?.rating?.rate} </p>
-          </div>
+        <div class="card-body mt-4">
+          <h5 class="card-title">${product.title}</h5>
+          <p class="card-text"><span class="fw-bold">Category</span>: ${
+            product.category
+          }</p>
+        
+                
         </div>
+        <ul class="card-text ps-0">
+            
+        <li><span class = "fw-bold">Total ratings</span>: ${
+          product?.rating?.count
+        }
+        </li>
+        
+        <li>Average rating: ${product?.rating?.rate}/5 </li>
+        <li>${showStars(Math.round(product?.rating?.rate))}</li>
+        
+      </ul>
+        <hr>
+        <h4 class="card-text">Price: $ ${product.price}</h4>
+        
         <div class="card-footer">
           <small class="text-muted">
-            <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-addtocart">add to cart</button>
+            <button onclick="addToCart(${product.id},${
+      product.price
+    })" id="addToCart-btn" class="buy-now btn btn-addtocart">add to cart</button>
             <button id="details-btn" class="btn btn-details">Details</button></div>
           </small>
         </div>

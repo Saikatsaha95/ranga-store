@@ -1,11 +1,24 @@
 body {
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
-  background-color: gainsboro;
+  /* background-color: gainsboro; */
+  /* background-image: url(../bg-light-img.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; */
+  /* background-color: rgb(2, 2, 58); */
+  background-color: rgb(51, 57, 90);
+}
+
+.title-text {
+  color: white;
 }
 
 h1 {
   font-weight: 700;
+}
+
+.star-gold {
+  color: gold;
 }
 
 #all-products {
@@ -23,12 +36,28 @@ h1 {
 /* ==============Every card design===================== */
 .single-product {
   padding: 10px;
-  transition: 0.6s;
+  transition: 0.4s;
   border: 2px solid gray;
-  height: 660px;
+  height: 680px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 10px;
+  /* backdrop-filter: blur(5px); */
+  background-color: rgba(255, 255, 255, 1);
+  /* box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px; */
+  border: 2px rgba(255, 255, 255, 0.4) solid;
+  border-bottom: 4px solid rgba(40, 40, 40, 0.35);
+  border-right: 4px solid rgba(40, 40, 40, 0.35);
 }
+
 .single-product:hover {
-  box-shadow: 10px 10px 10px rgb(98, 97, 97);
+  /* box-shadow: 15px 15px 15px rgb(119, 118, 118); */
+  /* box-shadow: 10px 10px 10px rgb(121, 119, 119); */
+  transform: scale(1.03);
+  overflow: hidden;
 }
 /* ========================================================== */
 
@@ -41,7 +70,8 @@ h1 {
 }
 
 .btn-details {
-  background-color: rgb(190, 190, 49);
+  /* background-color: rgb(190, 190, 49); */
+  background-color: limegreen;
   color: white;
   font-weight: bold;
   box-shadow: 4px 4px rgba(0, 0, 0, 0.267);
@@ -60,6 +90,14 @@ h1 {
 .cart-main {
   padding-right: 30px;
 }
+
+li {
+  list-style: none;
+}
+
+/* hr {
+  margin: 10px 1.5px 2px 1.5px;
+} */
 
 @media only screen and (max-width: 768px) {
   #all-products {
