@@ -39,12 +39,14 @@ const showProducts = (products) => {
         </div>
         <ul class="card-text ps-0">
             
-        <li><span class = "fw-bold">Total ratings</span>: ${
+        <li><span class = "fw-bold">Total ratings</span>: <span class = "text-danger fw-bold">${
           product?.rating?.count
-        }
+        }</span>
         </li>
         
-        <li>Average rating: ${product?.rating?.rate}/5 </li>
+        <li><span class= "fw-bold">Average rating</span>: <span class = "text-danger fw-bold">${
+          product?.rating?.rate
+        }/5</span> </li>
         <li>${showStars(Math.round(product?.rating?.rate))}</li>
         
       </ul>
